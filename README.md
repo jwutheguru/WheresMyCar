@@ -11,5 +11,7 @@ Am looking into better ways.
 
 ## References
 [Calculate distance, bearing and more between Latitude/Longitude points](http://www.movable-type.co.uk/scripts/latlong.html)
+
 [Coordinate Distance Calculator](http://boulter.com/gps/distance/)
+
 [Calculate distance between 2 GPS coordinates](http://stackoverflow.com/questions/365826/calculate-distance-between-2-gps-coordinates)
