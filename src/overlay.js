@@ -29,7 +29,7 @@ define(['jquery'], function($) {
             .appendTo($overlay);
 
         $('<img>').attr({
-            'src': '/assets/images/loading.gif'
+            'src': 'assets/images/loading.gif'
         }).appendTo($content);
 
         $('<label>').text(label || 'Please wait while we fetch your location')
