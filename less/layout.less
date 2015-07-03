@@ -1,0 +1,81 @@
+@import "../bower_components/lesshat/build/lesshat.less";
+@import "general.less";
+
+@rootFontSize: 16px;
+@mainFontSize: 1rem;
+
+@baseTransitionTime: 250ms;
+
+html {
+    background-color: #123;
+    color: #fff;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: @rootFontSize;
+}
+
+body {
+
+}
+
+main {
+    margin: 1rem auto 0;
+    width: 960px;
+    font-size: @mainFontSize;
+    text-align: center;
+}
+
+.inputgroup {
+    display: block;
+    margin: 8px;
+    padding: 0.75em 0.75em;
+    border: solid 8px #fff;
+
+    &.inline {
+        display: inline-block;
+    }
+}
+
+.readout {
+    display: inline-block;
+    width: 420px;
+    text-align: left;
+}
+
+#textInformation {
+    margin: 1rem 0 0;
+    padding: 0 2rem;
+    text-align: left;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    visibility: visible;
+    .opacity(1);
+    .transition(all @baseTransitionTime ease);
+
+    &.hidden {
+        visibility: hidden;
+        .opacity(0);
+    }
+
+    .content {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        height: 200px;
+        margin: -100px 0 0 -250px;
+        text-align: center;
+
+        img {
+            display: block;
+            margin: 0 auto 3rem;
+        }
+    }
+}

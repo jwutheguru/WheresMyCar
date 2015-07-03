@@ -1,0 +1,1 @@
+define(["jquery"],function($){function t(t){n||(n=$("#textSavedLocation")),n.html(t)}function t(t){n||(n=$("#textSavedLocation")),n.html(t)}var n,e;return{setSavedLocation:t}});

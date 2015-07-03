@@ -1,0 +1,1 @@
+define(["jquery"],function($){function t(t){o||(o=$("#textSavedLocation")),o.html(t)}function n(t){e||(e=$("#textDirection")),e.html(t)}function i(t){a||(a=$("#textInformation")),a.html(t)}var o,e,a;return{displaySavedLocation:t,displayDirection:n,displayInformation:i}});

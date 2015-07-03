@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Where's My Car?</title>    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+    <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+    <main>
+        <div class="inputgroup">
+            <button id="btnSetLocation">Set Location</button>
+            <button id="btnGetDirection" disabled="disabled">Get Direction</button>
+        </div>
+        <div class="inputgroup">
+            <h2>Information</h3>
+            <pre id="textSavedLocation" class="readout"></pre>
+            <pre id="textDirection" class="readout"></pre>
+            <div id="textInformation"></div>
+        </div>
+        <button id="btnClearSessionData">Clear Session Data</button>
+    </main>
+</body>
+<script src="bower_components/requirejs/require.js" type="text/javascript" data-main="src/main"></script>
+</html>

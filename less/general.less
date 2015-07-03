@@ -1,0 +1,52 @@
+input[type="text"],
+textarea {
+    display: inline-block;
+    width: 320px;
+    padding: 12px;
+    border: solid 8px #c9c9c9;
+    font-size: 24px;
+    text-align: center;
+    transition: border @baseTransitionTime ease;
+
+    &:hover, &:focus {
+        border: solid 8px #888;
+        outline: none;
+    }
+}
+
+textarea {
+    font-size: 16px;
+}
+
+button {
+    display: inline-block;
+    width: 320px;
+    padding: 12px;
+    color: #fff;
+    font-size: 1.5rem;
+    background-color: #888;
+    border: solid 8px #c9c9c9;
+    transition: all @baseTransitionTime ease;
+
+    &:hover, &:focus {
+        color: #888;
+        background-color: #fff;
+        border: solid 8px #fff;
+        outline: none;
+        cursor: pointer;
+    }
+
+    &:active {
+        color: #fff;
+        background-color: #888;
+        border: solid 8px #c9c9c9;
+    }
+
+    &:disabled {
+        color: #888;
+        background-color: #ccc;
+        border-color: #bbb;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
