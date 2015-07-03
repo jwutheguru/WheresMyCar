@@ -76,8 +76,10 @@ main {
 }
 #textInformation {
   margin: 1rem 0 0;
-  padding: 0 2rem;
+  padding: 0 2rem 1rem;
   text-align: left;
+  border-bottom: 5px solid white;
+  font-weight: bold;
 }
 .overlay {
   position: fixed;

@@ -78,6 +78,8 @@ define(['jquery', 'geolocation', 'readout', 'overlay'], function($, geolocation,
             JSON.stringify(savedLocation, null, 2)
         );
 
+        readout.displaySavedLocationMap(location);
+
         $btnGetDirection.prop('disabled', false);
     }
 
@@ -109,6 +111,8 @@ define(['jquery', 'geolocation', 'readout', 'overlay'], function($, geolocation,
         var dir = geolocation.getDirectionText(bearing);
 
         readout.displayInformation('Your destination is ' + distance.toFixed(2) + ' feet away, bearing ' + bearing.toFixed(2) + ' degrees (' + dir + ').');
+
+        readout.displayDirectionMap(location);
     }
 
     function geolocationErrorHandler(error) {
