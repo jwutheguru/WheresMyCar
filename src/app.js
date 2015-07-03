@@ -22,6 +22,13 @@ define(['jquery', 'geolocation', 'readout', 'overlay'], function($, geolocation,
         $btnClearSessionData.on('click', function(e) {
             localStorage[lsSavedLocationKey] = '';
             delete localStorage[lsSavedLocationKey];
+
+            readout.displaySavedLocation('');
+            readout.displayDirection('');
+            readout.displayInformation('');
+
+            clearInterval(currentLocationInterval);
+            currentLocationInterval = null;
         });
 
         $btnSetLocation.on('click', function(e) {
