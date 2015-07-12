@@ -8,6 +8,8 @@ define(['jquery'], function($) {
     var $mapSavedLocation;
 
     var mapSavedLocation;
+    var markerSavedLocation;
+    var markerCurrentLocation;
 
     function displaySavedLocation(text) {
         if (!$readout) $readout = $('#readout');
@@ -46,7 +48,7 @@ define(['jquery'], function($) {
         });
         mapSavedLocation = map;
 
-        var marker = new google.maps.Marker({
+        markerSavedLocation = new google.maps.Marker({
             position: latLng,
             map: map,
             title: 'Target Location'
@@ -56,12 +58,14 @@ define(['jquery'], function($) {
     function displayDirectionMap(position) {
         var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-        var marker = new google.maps.Marker({
-            position: latLng,
-            map: mapSavedLocation,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-            title: 'Current Location'
-        });
+        if (!markerCurrentLocation) {
+            markerCurrentLocation = new google.maps.Marker({
+                map: mapSavedLocation,
+                icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                title: 'Current Location'
+            });
+        }
+        markerCurrentLocation.setPosition(latLng);
     }
 
     return {

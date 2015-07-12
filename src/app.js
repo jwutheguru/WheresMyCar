@@ -10,15 +10,24 @@ define(['jquery', 'geolocation', 'readout', 'overlay'], function($, geolocation,
 
     var $btnSetLocation;
     var $btnGetDirection;
+
+    var $btnStopPolling;
     var $btnClearSessionData;
 
     function registerControls() {
         $btnSetLocation = $('#btnSetLocation');
         $btnGetDirection = $('#btnGetDirection');
+
+        $btnStopPolling = $('#btnStopPolling');
         $btnClearSessionData = $('#btnClearSessionData');
     }
 
     function registerControlsEvents() {
+        $btnStopPolling.on('click', function(e) {
+            clearInterval(currentLocationInterval);
+            currentLocationInterval = null;
+        });
+
         $btnClearSessionData.on('click', function(e) {
             localStorage[lsSavedLocationKey] = '';
             delete localStorage[lsSavedLocationKey];
