@@ -1,50 +1,42 @@
 define(['jquery'], function($) {
 
-    var $readout;
     var $textSavedLocation;
     var $textDirection;
     var $textInformation;
 
     var $mapSavedLocation;
-
-    var mapSavedLocation;
+    var $mapDirection;
 
     function displaySavedLocation(text) {
-        if (!$readout) $readout = $('#readout');
         if (!$textSavedLocation) $textSavedLocation = $('#textSavedLocation');
 
         $textSavedLocation.html(text);
     }
 
     function displayDirection(text) {
-        if (!$readout) $readout = $('#readout');
         if (!$textDirection) $textDirection = $('#textDirection');
 
         $textDirection.html(text);
     }
 
     function displayInformation(text) {
-        if (!$readout) $readout = $('#readout');
         if (!$textInformation) $textInformation = $('#textInformation');
 
         $textInformation.html(text);
     }
 
     function displaySavedLocationMap(position) {
-        if ($mapSavedLocation) $mapSavedLocation.remove();
-
-        $mapSavedLocation = $('<div>').attr({
+        var $map = $('<div>').attr({
             'id': 'mapSavedLocation',
-            'style': 'height: 400px'
-        }).appendTo($textSavedLocation.parent());
+            'style': 'height: 300px'
+        }).appendTo($textSavedLocation);
 
         var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-        var map = new google.maps.Map($mapSavedLocation[0], {
+        var map = new google.maps.Map($map[0], {
             center: latLng,
-            zoom: 15,
+            zoom: 12,
         });
-        mapSavedLocation = map;
 
         var marker = new google.maps.Marker({
             position: latLng,
@@ -54,13 +46,22 @@ define(['jquery'], function($) {
     }
 
     function displayDirectionMap(position) {
+        var $map = $('<div>').attr({
+            'id': 'mapDirection',
+            'style': 'height: 300px'
+        }).appendTo($textDirection);
+
         var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+        var map = new google.maps.Map($map[0], {
+            center: latLng,
+            zoom: 12,
+        });
 
         var marker = new google.maps.Marker({
             position: latLng,
-            map: mapSavedLocation,
-            icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-            title: 'Current Location'
+            map: map,
+            title: 'Target Location'
         });
     }
 

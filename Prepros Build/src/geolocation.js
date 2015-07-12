@@ -44,6 +44,11 @@ define([], function() {
         lat2 = toRadian(lat2);
         long2 = toRadian(long2);
 
+        // var y = Math.sin(λ2-λ1) * Math.cos(φ2);
+        // var x = Math.cos(φ1)*Math.sin(φ2) -
+        //         Math.sin(φ1)*Math.cos(φ2)*Math.cos(λ2-λ1);
+        // var brng = toDegree(Math.atan2(y, x));
+
         var y = Math.sin(long2-long1) * Math.cos(lat2);
         var x = Math.cos(lat1)*Math.sin(lat2) -
                 Math.sin(lat1)*Math.cos(lat2)*Math.cos(long2-long1);
@@ -56,7 +61,7 @@ define([], function() {
 
     function getDirectionText(bearing) {
         var directionText = '';
-        if (bearing > 337.5 || bearing <= 22.5) directionText = 'N';
+        if (bearing > 337.5 && bearing <= 22.5) directionText = 'N';
         else if (bearing > 22.5 && bearing <= 67.5) directionText = 'NE';
         else if (bearing > 67.5 && bearing <= 112.5) directionText = 'E';
         else if (bearing > 112.5 && bearing <= 157.5) directionText = 'SE';
